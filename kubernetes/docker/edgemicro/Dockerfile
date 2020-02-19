@@ -1,7 +1,7 @@
 FROM node:8-alpine
 
 COPY installnode.sh /tmp
-RUN --chown=100:101 /tmp/installedgemicro.sh
+#RUN --chown=100:101 /tmp/installedgemicro.sh
 
 # create user and group for microgateway
 RUN apk add --no-cache sed grep && \
@@ -27,7 +27,7 @@ VOLUME /opt/apigee/plugins
 # COPY cert.pem /opt/apigee/.edgemicro
 
 # copy entrypoint
-COPY --chown=100:101 entrypoint.sh /opt/apigee
+COPY entrypoint.sh /opt/apigee
 
 # initialize edgemicro
 RUN sh /tmp/installedgemicro.sh&& \
