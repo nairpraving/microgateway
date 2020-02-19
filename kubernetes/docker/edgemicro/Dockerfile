@@ -31,8 +31,8 @@ VOLUME /opt/apigee/plugins
 COPY entrypoint.sh /opt/apigee
 
 # initialize edgemicro
-RUN sh /tmp/installedgemicro.sh&& \
-    rm -f /tmp/installedgemicro.sh
+RUN sh /tmp/installedgemicro.sh
+    #rm -f /tmp/installedgemicro.sh
 
 # Expose ports
 EXPOSE 8000
