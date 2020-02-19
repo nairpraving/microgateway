@@ -1,7 +1,7 @@
 FROM node:8-alpine
 
 COPY installnode.sh /tmp
-COPY --chown=100:101 installedgemicro.sh /tmp
+#COPY --chown=100:101 installedgemicro.sh /tmp
 
 # create user and group for microgateway
 RUN apk add --no-cache sed grep && \
@@ -11,8 +11,7 @@ RUN apk add --no-cache sed grep && \
 ENV NODE_ENV production
 
 #install node.js
-RUN chmod +x /tmp/installnode.sh && \
-    sh /tmp/installnode.sh && \
+RUN sh /tmp/installnode.sh && \
     rm -f /tmp/installnode.sh && \
     deluser --remove-home node
 
