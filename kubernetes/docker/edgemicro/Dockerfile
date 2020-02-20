@@ -51,4 +51,5 @@ RUN chown -R apigee:apigee /opt/apigee && \
 EXPOSE 8000
 EXPOSE 8443
 
+USER apigee
 ENTRYPOINT ["/opt/apigee/entrypoint.sh"]
