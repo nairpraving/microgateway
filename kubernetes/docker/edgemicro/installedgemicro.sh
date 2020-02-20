@@ -2,6 +2,6 @@
 
 set echo off
 
-    mkdir -p /opt/apigee/logs && \
-    mkdir -p /opt/apigee/plugins && \
+    #mkdir -p /opt/apigee/logs && \
+    #mkdir -p /opt/apigee/plugins && \
     edgemicro init
