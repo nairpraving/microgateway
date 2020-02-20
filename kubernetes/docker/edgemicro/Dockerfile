@@ -18,15 +18,16 @@ RUN sh /tmp/installnode.sh && \
 RUN whoami && \
     echo beforeapigee
 
-USER apigee
+
 WORKDIR /opt/apigee
 RUN mkdir /opt/apigee/.edgemicro && mkdir /opt/apigee/logs && mkdir /opt/apigee/plugins
 VOLUME /opt/apigee/.edgemicro
 VOLUME /opt/apigee/logs
 VOLUME /opt/apigee/plugins
+
 RUN whoami && \
-    echo afterapigee
-RUN chown=apigee:apigee /opt/apigee/*
+    echo before chown
+RUN chown -R apigee:apigee /opt/apigee
 # copy tls files if needed
 # COPY key.pem /opt/apigee/.edgemicro
 # COPY cert.pem /opt/apigee/.edgemicro
