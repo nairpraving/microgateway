@@ -15,6 +15,8 @@ ENV NODE_ENV production
 RUN sh /tmp/installnode.sh && \
     rm -f /tmp/installnode.sh && \
     deluser --remove-home node
+RUN whoami && \
+    echo beforeapigee
 
 USER apigee
 WORKDIR /opt/apigee
@@ -22,6 +24,8 @@ RUN mkdir /opt/apigee/.edgemicro && mkdir /opt/apigee/logs && mkdir /opt/apigee/
 VOLUME /opt/apigee/.edgemicro
 VOLUME /opt/apigee/logs
 VOLUME /opt/apigee/plugins
+RUN whoami && \
+    echo afterapigee
 RUN chown=apigee:apigee /opt/apigee/*
 # copy tls files if needed
 # COPY key.pem /opt/apigee/.edgemicro
