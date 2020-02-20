@@ -54,6 +54,8 @@ start_edge_micro() {
   TARGET_PORT=$SERVICE_PORT
   BASE_PATH=/
   BACKGROUND=" &"
+  echo "current Location----------------------"
+  echo pwd
   MGSTART=" edgemicro start -o $EDGEMICRO_ORG -e $EDGEMICRO_ENV -k $EDGEMICRO_KEY -s $EDGEMICRO_SECRET -r $EDGEMICRO_PORT -d $EDGEMICRO_PLUGIN_DIRECTORY"
   LOCALPROXY=" export EDGEMICRO_LOCAL_PROXY=$EDGEMICRO_LOCAL_PROXY "
   MGDIR="cd ${APIGEE_ROOT} "
@@ -61,6 +63,7 @@ start_edge_micro() {
   DEBUG=" export DEBUG=$DEBUG "
   EDGEMICRO_PROXY=""
   EDGEMICRO_NODE_OPTS=""
+   echo "after edgemicro start----------------------"
 
   if [[ -n "$HTTPS_PROXY" ]]
     then
