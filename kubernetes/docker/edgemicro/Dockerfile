@@ -2,7 +2,7 @@ FROM node:8-alpine
 
 COPY installnode.sh /tmp
 COPY installedgemicro.sh /tmp
-RUN chown=100:101 /tmp/installedgemicro.sh
+#RUN chown=100:101 /tmp/installedgemicro.sh
 
 # create user and group for microgateway
 RUN apk add --no-cache sed grep && \
@@ -22,7 +22,7 @@ RUN mkdir /opt/apigee/.edgemicro && mkdir /opt/apigee/logs && mkdir /opt/apigee/
 VOLUME /opt/apigee/.edgemicro
 VOLUME /opt/apigee/logs
 VOLUME /opt/apigee/plugins
-
+RUN chown=apigee:apigee /opt/apigee/*
 # copy tls files if needed
 # COPY key.pem /opt/apigee/.edgemicro
 # COPY cert.pem /opt/apigee/.edgemicro
