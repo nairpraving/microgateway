@@ -2,7 +2,7 @@ FROM node:8-alpine
 
 COPY installnode.sh /tmp
 COPY installedgemicro.sh /tmp
-#RUN chown=100:101 /tmp/installedgemicro.sh
+RUN chown=100:101 /tmp/installedgemicro.sh
 
 # create user and group for microgateway
 RUN apk add --no-cache sed grep && \
