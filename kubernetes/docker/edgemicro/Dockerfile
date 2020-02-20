@@ -8,7 +8,7 @@ COPY installedgemicro.sh /tmp
 RUN apk add --no-cache sed grep && \
     addgroup -S apigee -g 101 && \
     adduser -s /bin/sh -u 100 -S -G apigee apigee -h /opt/apigee
-RUN chown=apigee:apigee /tmp/installedgemicro.sh
+
 
 ENV NODE_ENV production
 
