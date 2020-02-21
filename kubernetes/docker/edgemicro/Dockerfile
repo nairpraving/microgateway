@@ -35,6 +35,8 @@ RUN ln -s /opt/apigee/.edgemicro /.edgemicro
 COPY entrypoint.sh /opt/apigee
 RUN chown -R apigee:apigee /opt/apigee && \
     chown -R apigee:apigee /opt/apigee/.edgemicro && \
+    chown -R apigee:apigee /opt/apigee/logs && \
+    chown -R apigee:apigee /opt/apigee/plugins && \
     chown apigee:apigee /opt/apigee/entrypoint.sh 
 # initialize edgemicro
 USER apigee
@@ -43,14 +45,9 @@ RUN whoami && \
     
 RUN sh /tmp/installedgemicro.sh
     #rm -f /tmp/installedgemicro.sh
-    
-USER root    
-RUN chown -R apigee:apigee /opt/apigee && \
-    chown -R apigee:apigee /opt/apigee/.edgemicro && \
-    chown apigee:apigee /opt/apigee/entrypoint.sh 
+
 # Expose ports
 EXPOSE 8000
 EXPOSE 8443
 
-USER apigee
 ENTRYPOINT ["/opt/apigee/entrypoint.sh"]
