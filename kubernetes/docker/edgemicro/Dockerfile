@@ -25,7 +25,8 @@ VOLUME /opt/apigee/plugins
 
 RUN whoami && \
     echo BuiltFolders
-
+    
+RUN ln -s /opt/apigee/.edgemicro /.edgemicro 
 # copy tls files if needed
 # COPY key.pem /opt/apigee/.edgemicro
 # COPY cert.pem /opt/apigee/.edgemicro
