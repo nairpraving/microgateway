@@ -3,14 +3,14 @@
 set echo off
 
 chown apigee:apigee /opt/apigee && \
-    npm install -g edgemicro@3.1.1 && \
+    npm install edgemicro -g --unsafe && \
     mkdir -p /opt/apigee/logs && \
     chown apigee:apigee /opt/apigee/logs && \
     mkdir -p /opt/apigee/plugins && \
     chown apigee:apigee /opt/apigee/plugins && \
     mkdir /opt/apigee/.edgemicro && \
     chown apigee:apigee /opt/apigee/.edgemicro && \
-    ln -s /opt/apigee/.edgemicro /root/.edgemicro && \
+    ln -s /opt/apigee/.edgemicro /.edgemicro && \
     su - apigee -s /bin/sh -c "edgemicro init" && \
     chmod +x /opt/apigee/entrypoint.sh && \
     chown apigee:apigee /opt/apigee/entrypoint.sh && \
