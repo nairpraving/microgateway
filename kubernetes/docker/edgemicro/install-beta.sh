@@ -14,4 +14,4 @@ chown apigee:apigee /opt/apigee && \
     su - apigee -s /bin/sh -c "edgemicro init" && \
     chmod +x /opt/apigee/entrypoint.sh && \
     chown apigee:apigee /opt/apigee/entrypoint.sh && \
-    ln -s /opt/apigee/entrypoint.sh /usr/local/bin/entrypoint.sh
+    ln -s /opt/apigee/entrypoint.sh /usr/local/bin/entrypoint
