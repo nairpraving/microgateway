@@ -3,7 +3,7 @@
 set echo off
 
 chown apigee:apigee /opt/apigee && \
-    npm install -g edgemicro@beta && \
+    npm install -g edgemicro@3.1.1 && \
     mkdir -p /opt/apigee/logs && \
     chown apigee:apigee /opt/apigee/logs && \
     mkdir -p /opt/apigee/plugins && \
