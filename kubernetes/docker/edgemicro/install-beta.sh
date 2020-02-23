@@ -3,6 +3,7 @@
 set echo off
 
 chown apigee:apigee /opt/apigee && \
+chmod 777 /opt/apigee && \
     npm install edgemicro -g --unsafe && \
     mkdir -p /opt/apigee/logs && \
     chown apigee:apigee /opt/apigee/logs && \
